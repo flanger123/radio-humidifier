@@ -1,2 +1,2 @@
-# radio-humidifier
+# Radio-humidifier
 humidifier for Platon
