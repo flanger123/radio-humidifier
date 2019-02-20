@@ -85,11 +85,11 @@ void sendSensor()
    
       if (t<low_temp || t>high_temp ) 
             {
-              if(start_count=0){
+              if(start_count==0){
                   start_count=1;
                   timing = millis();
                       Serial.print("start bad temp: ");
-                      Serial.println(t);
+                     // Serial.println(t);
             }
         else{
                if (millis() - timing > 60000){
@@ -100,15 +100,15 @@ void sendSensor()
                   start_count=0;
                   timing = millis();
                    Serial.print("end bad temp: ");
-                   Serial.println(t);
+                //   Serial.println(t);
                   }
                }
             }
             
-      if(start_count=1&&t>=low_temp && t<=high_temp ){
+      if(start_count==1&&t>=low_temp && t<=high_temp ){
                       start_count=0; timing = millis(); 
                       Serial.print("вроде наладилось:  ");
-                       Serial.println(t);
+                     //  Serial.println(t);
                       }
        
             Blynk.virtualWrite(V5, h);
